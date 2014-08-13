@@ -40,7 +40,7 @@ default[:wlp][:install_method] = 'archive'
 # Base URL location for downloading the runtime, extended, and extras Liberty profile archives. 
 # Must be set when `node[:wlp][:install_method]` is set to `archive`. 
 #>
-default[:wlp][:archive][:base_url] = nil
+default[:wlp][:archive][:base_url] = "http://9.47.224.239/repos/install_images/WAS"
 
 #<> URL location of the runtime archive.
 default[:wlp][:archive][:runtime][:url] = "#{node[:wlp][:archive][:base_url]}/wlp-developers-runtime-8.5.5.2.jar"
@@ -73,12 +73,13 @@ default[:wlp][:archive][:extras][:base_dir] = "#{node[:wlp][:base_dir]}/extras"
 # Accept license terms when doing archive-based installation. 
 # Must be set to `true` or the installation fails. 
 #>
-default[:wlp][:archive][:accept_license] = false
+default[:wlp][:archive][:accept_license] = true
 
 #<
 # URL location for a zip file containing Liberty profile installation files. Must be set 
 # if `node[:wlp][:install_method]` is set to `zip`.
 #>
+#default[:wlp][:zip][:url] = "http://9.47.224.239/repos/install_images/WAS/WAS_Liberty_Dev_v8.5.5.zip"
 default[:wlp][:zip][:url] = nil
 
 #<> Defines a basic server configuration when creating server instances using the `wlp_server` resource.
