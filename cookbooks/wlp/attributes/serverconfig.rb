@@ -21,12 +21,45 @@ default[:wlp][:servers][:defaultServer] = {
   "serverName" => "defaultServer",
   "description" => "Default Server",
   "featureManager" => {
-    "feature" => [ "jsp-2.2" ]
+    "feature" => [ "jsp-2.2"],
+    "feature" => [ "adminCenter-1.0"]
   },
   "httpEndpoint" => {
     "id" => "defaultHttpEndpoint",
     "host" => "*",
     "httpPort" => "9080",
     "httpsPort" => "9443"
-  }
+  },
+  "quickStartSecurity" => {
+    "userName" => "admin",
+    "userPassword" => "admin"
+  },
+  "keyStore" => {
+    "id" => "defaultKeyStore",
+    "password" => "Liberty"
+  },
+  "library" => {
+    "id" => "DB2JCC4Lib",
+    "fileset" => {
+     "dir" => "/opt/db2/java",
+     "includes" => "db2jcc4.jar db2jcc_license_cisuz.jar"
+   }
+  },
+  "dataSource" => {
+    "id" => "db2",
+    "jndiName" => "jdbc/db2",
+    "connectionSharing" => "MatchCurrentState",
+    "isolationLevel" => "TRANSACTION_READ_COMMITTED",
+    "jdbcDriver" => {
+      "ibraryRef" => "DB2JCC4Lib"
+    },
+    "properties.db2.jcc" => {
+      "databaseName" => "SAMPLE",
+      "serverName" => "172.31.1.3",
+      "portNumber" => "50000",
+      "currentLockTimeout" => "30s",
+      "user" => "db2inst1",
+      "password" => "passw0rd"
+    }
+  }  
 }
