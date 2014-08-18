@@ -21,8 +21,7 @@ default[:wlp][:servers][:defaultServer] = {
   "serverName" => "defaultServer",
   "description" => "Default Server",
   "featureManager" => {
-    "feature" => [ "jsp-2.2"],
-    "feature" => [ "adminCenter-1.0"]
+    "feature" => [ "jsp-2.2", "jdbc-4.0","jpa-2.0","adminCenter-1.0"]
   },
   "httpEndpoint" => {
     "id" => "defaultHttpEndpoint",
@@ -39,19 +38,19 @@ default[:wlp][:servers][:defaultServer] = {
     "password" => "Liberty"
   },
   "library" => {
-    "id" => "DB2JCC4Lib",
+    "id" => "DBLib",
     "fileset" => {
      "dir" => "/opt/db2/java",
      "includes" => "db2jcc4.jar db2jcc_license_cisuz.jar"
    }
   },
   "dataSource" => {
-    "id" => "db2",
-    "jndiName" => "jdbc/db2",
+    "id" => "db",
+    "jndiName" => "jdbc/db",
     "connectionSharing" => "MatchCurrentState",
     "isolationLevel" => "TRANSACTION_READ_COMMITTED",
     "jdbcDriver" => {
-      "ibraryRef" => "DB2JCC4Lib"
+       "libraryRef" => "DBLib"
     },
     "properties.db2.jcc" => {
       "databaseName" => "SAMPLE",
