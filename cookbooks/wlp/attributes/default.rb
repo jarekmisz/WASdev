@@ -40,16 +40,16 @@ default[:wlp][:install_method] = 'archive'
 # Base URL location for downloading the runtime, extended, and extras Liberty profile archives. 
 # Must be set when `node[:wlp][:install_method]` is set to `archive`. 
 #>
-default[:wlp][:archive][:base_url] = "http://9.47.224.239/repos/install_images/WAS"
+default[:wlp][:archive][:base_url] = "http://jmchefserver.cloudapp.net:8080/repos/install_images/WAS"
 
 #<> URL location of the runtime archive.
-default[:wlp][:archive][:runtime][:url] = "#{node[:wlp][:archive][:base_url]}/wlp-developers-runtime-8.5.5.2.jar"
+default[:wlp][:archive][:runtime][:url] = "#{node[:wlp][:archive][:base_url]}/wlp-runtime-8.5.5.5.jar"
 
 #<> Checksum value for the runtime archive.
 default[:wlp][:archive][:runtime][:checksum] = 'd3e78cb43ab6392175807b54495bc8996ec9bc7b33cd1fc9699de3e74a9696bc'
                                                 
 #<> URL location of the extended archive.
-default[:wlp][:archive][:extended][:url] = "#{node[:wlp][:archive][:base_url]}/wlp-developers-extended-8.5.5.2.jar"
+default[:wlp][:archive][:extended][:url] = "#{node[:wlp][:archive][:base_url]}/wlp-extended-8.5.5.5.jar"
 
 #<> Checksum value for the extended archive.
 default[:wlp][:archive][:extended][:checksum] = 'b4cd9ae8716073ef4c6a2181f7201a31d2c24cfd55337694f09bed7715548ca3'

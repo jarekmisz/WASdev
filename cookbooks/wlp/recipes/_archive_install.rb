@@ -43,7 +43,7 @@ else
     source node[:wlp][:archive][:runtime][:url]
     user node[:wlp][:user]
     group node[:wlp][:group]
-    checksum node[:wlp][:archive][:runtime][:checksum]
+    #checksum node[:wlp][:archive][:runtime][:checksum]
     not_if { ::File.exists?(runtime_dir) }
   end
 end
@@ -64,7 +64,7 @@ if node[:wlp][:archive][:extended][:install]
       source node[:wlp][:archive][:extended][:url]
       user node[:wlp][:user]
       group node[:wlp][:group]
-      checksum node[:wlp][:archive][:extended][:checksum]
+      #checksum node[:wlp][:archive][:extended][:checksum]
       not_if { ::File.exists?(extended_dir) }
     end
   end
